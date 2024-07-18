@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.51.9",
+    "axios": "^1.7.2",
     "next": "14.2.4",
     "prettier": "^3.3.2",
     "react": "^18",
