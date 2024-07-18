@@ -1,26 +1,14 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-
-const getFilms = async () => {
-  const { data } = await axios.get('https://api.themoviedb.org/3/movie/popular', {
-    params: { language: 'en-US' },
-    headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_FILM_API_KEY}`,
-    },
-  });
-
-  return data;
-};
+import { getPopularFilms } from '@/services/film';
 
 export default function Films() {
-  const { data, isLoading } = useQuery({
-    queryKey: ['todos'],
-    queryFn: getFilms,
+  const { data: films = [], isLoading } = useQuery({
+    queryKey: ['popular-films'],
+    queryFn: getPopularFilms,
   });
 
-  console.log(data);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
