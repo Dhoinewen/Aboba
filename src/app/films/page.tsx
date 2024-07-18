@@ -7,7 +7,7 @@ const getFilms = async () => {
   const { data } = await axios.get('https://api.themoviedb.org/3/movie/popular', {
     params: { language: 'en-US' },
     headers: {
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MDg4OWJmNDMwMDM4OGJhMmQzNWExNTc5ZmFjNzA1NyIsIm5iZiI6MTcyMTMxNDU0NC40NzA0OTcsInN1YiI6IjY0YmMyNTViODVjMGEyMDBhZDVmZjU3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.QqcYrmvaBICoj_joSwXlgHB-ZWNEBoFhbSL7mos9rjk`,
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_FILM_API_KEY}`,
     },
   });
 
