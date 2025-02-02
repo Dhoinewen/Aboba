@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 
 import { Layout as RootLayout } from '@/layouts/root';
+import Image from 'next/image';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +20,23 @@ export default function Layout({
   return (
     <html lang="en">
       <RootLayout>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <div className={'flex align-middle justify-between p-2 px-4 h-20'}>
+            <Image
+              width={50}
+              height={50}
+              src="/pepe-dancing-1.gif"
+              alt="pepe-dancing-1"
+            />
+            <Image
+              width={50}
+              height={50}
+              src="/pepe-dancing-2.gif"
+              alt="pepe-dancing-2"
+            />
+          </div>
+          {children}
+        </body>
       </RootLayout>
     </html>
   );
