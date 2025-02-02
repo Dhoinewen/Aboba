@@ -22,12 +22,19 @@ export default function Layout({
       <RootLayout>
         <body className={inter.className}>
           <div className={'flex align-middle justify-between p-2 px-4 h-20'}>
-            <Image
-              width={50}
-              height={50}
-              src="/pepe-dancing-1.gif"
-              alt="pepe-dancing-1"
-            />
+            <div className={'flex space-x-4'}>
+              <Image
+                width={50}
+                height={50}
+                src="/pepe-dancing-1.gif"
+                alt="pepe-dancing-1"
+              />
+              <div className="max-w-5xl items-center justify-between font-mono text-sm flex">
+                <p className="flex w-full justify-center from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit rounded-xl border bg-gray-200 p-4">
+                  <code className="font-mono font-bold">/home</code>
+                </p>
+              </div>
+            </div>
             <Image
               width={50}
               height={50}
